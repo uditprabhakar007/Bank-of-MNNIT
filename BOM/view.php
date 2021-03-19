@@ -4,15 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <style>
-            body{
-            background-color : whitesmoke;
-            }
-        </style>
+    <link href="style.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <center>
-    <table>
+    <div class="main">
+    <h1> Bank of MNNIT </h1>
+    <table class="customers">
         <tr>
             <th> Account number </th>
             <th> Name </th>
@@ -36,6 +34,7 @@
         $con -> close();
         ?>
     </table>
+    </div>
     </center>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>

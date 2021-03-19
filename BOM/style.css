@@ -1,0 +1,94 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+img{
+    padding: 12px 5px;
+    transform: translate(150%,15%);
+    width: 25%;
+    opacity: 0.7;
+}
+.main{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to right, #9c27b0, #8ecdff);
+}
+.nav-link{
+    font-size: 1.9em;
+    text-align: center;
+    margin: 100px 0;
+    font-weight: bold;
+}
+.customers{
+    border-collapse: collapse;
+    margin: 50px 0;
+    font-size: 1.3em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.customers tr th{
+    background-color: #002498;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+    padding: 12px 15px;
+}
+.customers tr td{
+    padding: 12px 15px;
+}
+.customers tr{
+    border-bottom: 1px solid #dddddd;
+}
+.customers tr:nth-of-type(even){
+    background-color: #f3f3f35c;
+}
+.customers tr:last-of-type{
+border-bottom: 2px solid #002498;
+}
+h1{
+    margin: 25px 0;
+    text-align: center;
+    text-decoration: underline;
+}
+h2{
+    margin: 25px 0;
+    margin-left: 475px;
+    text-align: left;
+    padding: 12px 15px;
+}
+.btn{
+    padding: 12px 15px;
+    cursor: pointer;
+    margin-left: 665px;
+}
+.tab1{
+    display: inline-block;
+    margin-left: 45px;
+}
+.tab2{
+    display: inline-block;
+    margin-left: 200px;
+}
+.tab3{
+    display: inline-block;
+    margin-left: 53px;
+}
+.tab4{
+    display: inline-block;
+    margin-left: 60px;
+}
+.form-group{
+    margin: 50px 0;
+    padding: 12px 15px;
+}
+.form-control{
+    width: 280px;
+    margin-left: 570px;
+}
+.form-padding{
+    padding: 12px 15px;
+}

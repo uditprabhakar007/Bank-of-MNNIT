@@ -15,24 +15,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body{
-        background-color : whitesmoke;
-        }
-    </style>
+    <link href="style.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />
 </head>
 <body>
+    <div class="main">
+        <h1> Transaction Details </h1>
         <form action="" method="POST">
           <div class="form-group">
-            <label for="accountToTransfer"> Account number </label>
-            <input required type="account number" class="form-control" name="account_number" placeholder="Enter account number">
+          <div class="form-padding">
+            <input required type="account_number" class="form-control" name="account_number" autocomplete="off" placeholder="Enter account number"></div>
+          <div class="form-padding">
+            <input required type= "amount" class="form-control" name="amount" autocomplete="off" placeholder="Enter amount"></div>
+          <div class="form-padding">
+            <button type="submit" name="Transfer" class="btn btn-primary">Submit</button></div>
           </div>
-          <div class="form-group">
-            <label for="moneyToTransfer"> Amount </label>
-            <input required type= "amount" class="form-control" name="amount" placeholder="Enter amount">
-          </div>
-          <button type="submit" name="Transfer" class="btn btn-primary">Submit</button>
         </form>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -42,10 +40,18 @@
    $con = mysqli_connect('localhost','Tidu','iambinod@69', 'bank');
    if(isset($_POST['Transfer']))
    {
-       if($row['Current_Balance'] < $_POST['amount']){
+       $chk = " SELECT * FROM customers WHERE Account_number= '".$_POST['account_number']."' ";
+       $rchk = mysqli_query($con, $chk);
+       $rowchk = mysqli_fetch_array($rchk);
+       if($rowchk == null){
+       echo "<script>alert('Incorrect account number');
+             window.location.href='/BOM/view.php';
+             </script>";
+       }
+       else if($row['Current_Balance'] < $_POST['amount']){
        echo "<script>alert('Insufficient balance');
-              window.location.href='/BOM/view.php';
-              </script>";
+             window.location.href='/BOM/view.php';
+             </script>";
        }
        else{
        $query = " UPDATE customers SET Current_Balance= Current_Balance + '".$_POST['amount']."' WHERE Account_number= '".$_POST['account_number']."' ";
